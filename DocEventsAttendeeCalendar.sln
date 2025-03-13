@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35828.75 d17.13
+VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocEventsAttendeeCalendar", "DocEventsAttendeeCalendar.csproj", "{0CF500C8-1435-4329-80A4-D07843510834}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocEventsAttendeeCalendar.TestProject", "..\DocEventsAttendeeCalendar.TestProject\DocEventsAttendeeCalendar.TestProject.csproj", "{C3F65290-036E-4D07-9444-ECB8CDE0BF75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0CF500C8-1435-4329-80A4-D07843510834}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CF500C8-1435-4329-80A4-D07843510834}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CF500C8-1435-4329-80A4-D07843510834}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F65290-036E-4D07-9444-ECB8CDE0BF75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F65290-036E-4D07-9444-ECB8CDE0BF75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F65290-036E-4D07-9444-ECB8CDE0BF75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F65290-036E-4D07-9444-ECB8CDE0BF75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
