@@ -2,6 +2,7 @@
 using DocEventsAttendanceCalendar.Domain.Services;
 using DocEventsAttendeeCalendar.DTOs;
 using DocEventsCalendar.Domain.Entities;
+using DocEventsCalendar.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DocEventsAttendeeCalendar.Controllers
@@ -13,10 +14,12 @@ namespace DocEventsAttendeeCalendar.Controllers
     {
         private readonly IEventService _eventService;
         private readonly IAttendeeService _attendeeService;
-        public EventsController(IEventService eventService , IAttendeeService attendeeService)
+        private readonly IEventRepository _eventRepository;
+        public EventsController(IEventService eventService , IAttendeeService attendeeService, IEventRepository eventRepository)
         {
             _eventService = eventService;
             _attendeeService = attendeeService; 
+            _eventRepository = eventRepository;
         }
    
         [HttpPost]
@@ -30,10 +33,17 @@ namespace DocEventsAttendeeCalendar.Controllers
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ResponseEventDto))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> UpdateEvent(int id)
+        public async Task<IActionResult> UpdateEvent(int id, UpdateRequestDto updateRequestDto)
         {
-            var updatedEvent = await _eventService.UpdateEvent(id);
+            var existingEvent = await _eventRepository.GetEventById(id);
+
+            if (existingEvent == null)
+            {
+                return null; 
+            }
+            existingEvent.Title = updateRequestDto.Title;
+            existingEvent.Description = updateRequestDto.Description;
+            var updatedEvent = await _eventService.UpdateEvent(existingEvent);
             if (updatedEvent == null) return NotFound();
             return Ok(updatedEvent);
         }

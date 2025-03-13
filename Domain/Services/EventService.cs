@@ -31,9 +31,9 @@ namespace DocEventsCalendar.Domain.Services
                 EndTime = createdEvent.EndTime
             };
         }
-        public async Task<ResponseEventDto> UpdateEvent(int id)
-        {
-            var updatedEvent =  await GetEventById(id);
+        public async Task<ResponseEventDto> UpdateEvent(Event updateEntity)
+        {           
+            var updatedEvent =  await _eventRepository.UpdateEvent(updateEntity);
             return new ResponseEventDto
             {
                 Id = updatedEvent.Id,
