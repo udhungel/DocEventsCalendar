@@ -12,18 +12,7 @@ namespace DocEventsCalendar.Domain.Repositories
         public EventRepository(ApplicationDbContext context)
         {           
             _context = context;
-        }
-        public async Task AddAttendeeToEvent(int eventId, int attendeeId)
-        {
-            var eventAttendee = new EventAttendee
-            {
-                EventId = eventId,
-                AttendeeId = attendeeId,
-                IsAttending = true 
-            };
-            await _context.EventAttendances.AddAsync(eventAttendee);
-            await _context.SaveChangesAsync();
-        }
+        }       
 
         public async Task<Event> CreateEvent(Event @event)
         {
@@ -56,6 +45,25 @@ namespace DocEventsCalendar.Domain.Repositories
                                         .FirstOrDefaultAsync(e => e.Id == id);
         }
 
+        public async Task<Event> UpdateEvent(Event @event)
+        {
+            _context.Events.Update(@event);
+            await _context.SaveChangesAsync();
+            return @event;
+        }
+
+        public async Task AddAttendeeToEvent(int eventId, int attendeeId)
+        {
+            var eventAttendee = new EventAttendee
+            {
+                EventId = eventId,
+                AttendeeId = attendeeId,
+                IsAttending = true
+            };
+            await _context.EventAttendances.AddAsync(eventAttendee);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<bool> RemoveAttendeeFromEvent(int eventId, int attendeeId)
         {
             var eventAttendee = await _context.EventAttendances
@@ -70,11 +78,6 @@ namespace DocEventsCalendar.Domain.Repositories
             return false; 
         }
 
-        public async Task<Event> UpdateEvent(Event @event)
-        {
-            _context.Events.Update(@event);
-            await _context.SaveChangesAsync();
-            return @event;
-        }
+       
     }
 }

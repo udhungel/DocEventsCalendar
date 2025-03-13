@@ -1,5 +1,8 @@
 ﻿using DocEventsAttendanceCalendar.Domain.Interfaces;
+using DocEventsAttendeeCalendar.DTOs;
+using DocEventsCalendar.Domain.Entities;
 using DocEventsCalendar.Domain.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace DocEventsAttendanceCalendar.Domain.Services
 {
@@ -10,13 +13,14 @@ namespace DocEventsAttendanceCalendar.Domain.Services
         {
             _eventRepository = eventRepository;
         }
-        public async Task AddAttendeeToEvent(int eventId, int attendeeId)
-        {
-            await _eventRepository.AddAttendeeToEvent(eventId, attendeeId);
+        public async Task AddAttendeeToEvent(RequestAttendeeDto requestDto)
+        {           
+            await _eventRepository.AddAttendeeToEvent(requestDto.EventId, requestDto.AttendeeId);
         }
-        public async Task RemoveAttendeeFromEvent(int eventId, int attendeeId)
-        {
-            await _eventRepository.RemoveAttendeeFromEvent(eventId, attendeeId);
+        public async Task<bool> RemoveAttendeeFromEvent(int eventId, int attendeeId)
+        {           
+           return await _eventRepository.RemoveAttendeeFromEvent(eventId, attendeeId);
+           
         }
     }
 }

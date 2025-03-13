@@ -1,13 +1,14 @@
-﻿using DocEventsCalendar.Domain.Entities;
+﻿using DocEventsAttendeeCalendar.DTOs;
+using DocEventsCalendar.Domain.Entities;
 
 namespace DocEventsAttendanceCalendar.Domain.Interfaces
 {
     public interface IEventService
     {
-        Task<Event> CreateEvent(Event @event);
-        Task<Event> UpdateEvent(Event @event);
+        Task<ResponseEventDto> CreateEvent(RequestEventDto requestEventDto);
+        Task<ResponseEventDto> UpdateEvent(int id);
         Task<bool> DeleteEvent(int id);
-        Task<List<Event>> GetAllEvents();
-        Task<Event> GetEventById(int id);
+        Task<List<ResponseEventDto>> GetAllEvents();
+        Task<ResponseEventDto> GetEventById(int id);
     }
 }
