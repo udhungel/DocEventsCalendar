@@ -1,17 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.13.35828.75
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33214.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocEventsAttendeeCalendar", "DocEventsAttendeeCalendar.csproj", "{0CF500C8-1435-4329-80A4-D07843510834}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocEventsAttendeeCalendar", "DocEventsAttendeeCalendar.csproj", "{0CF500C8-1435-4329-80A4-D07843510834}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{634F3701-069B-4802-B86D-20A051E94B99}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{57A5E7E8-D393-4B31-A53A-72EE9FDF5515}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocEventsAttendeeCalendar.Test", "..\DocEventsAttendeeCalendar.Test\DocEventsAttendeeCalendar.Test.csproj", "{34FCC5B7-902A-483D-BB44-348AAFF132ED}"
+	ProjectSection(SolutionItems) = preProject
+		..\tests\DocEventsAttendeeCalendar.Test\DocEventsAttendeeCalendar.Test.csproj = ..\tests\DocEventsAttendeeCalendar.Test\DocEventsAttendeeCalendar.Test.csproj
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,17 +24,12 @@ Global
 		{0CF500C8-1435-4329-80A4-D07843510834}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CF500C8-1435-4329-80A4-D07843510834}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CF500C8-1435-4329-80A4-D07843510834}.Release|Any CPU.Build.0 = Release|Any CPU
-		{34FCC5B7-902A-483D-BB44-348AAFF132ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34FCC5B7-902A-483D-BB44-348AAFF132ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34FCC5B7-902A-483D-BB44-348AAFF132ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34FCC5B7-902A-483D-BB44-348AAFF132ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0CF500C8-1435-4329-80A4-D07843510834} = {634F3701-069B-4802-B86D-20A051E94B99}
-		{34FCC5B7-902A-483D-BB44-348AAFF132ED} = {57A5E7E8-D393-4B31-A53A-72EE9FDF5515}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7CC3C686-8641-4EE7-ACCE-753F66A488DF}
