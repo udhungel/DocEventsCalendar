@@ -1,9 +1,12 @@
 using DocEventsAttendanceCalendar.Domain.Interfaces;
-using DocEventsAttendanceCalendar.Domain.Services;
+using DocEventsAttendeeCalendar.Domain.Interfaces;
+using DocEventsAttendeeCalendar.Repositories;
 using DocEventsCalendar.Data;
 using DocEventsCalendar.Domain.Interfaces;
 using DocEventsCalendar.Domain.Repositories;
 using DocEventsCalendar.Domain.Services;
+using DoctorCalendarAPI.Repositories;
+using DoctorCalendarAPI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,9 +22,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 });
 
 
-builder.Services.AddScoped<IEventRepository, EventRepository>();
+
 builder.Services.AddScoped<IAttendeeService, AttendeeService>();
 builder.Services.AddScoped<IEventService, EventService>();
+builder.Services.AddScoped<IEventRepository, EventRepository>();
+builder.Services.AddScoped<IAttendeeRepository, AttendeeRepository>();
+builder.Services.AddScoped<IEventAttendeeRepository, EventAttendeeRepository>();
+builder.Services.AddScoped<IEventAttendeeService, EventAttendeeService>();
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

@@ -8529,11 +8529,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\udeep\\Desktop\\tttt\\DocEventsCalendar\\tests\\DocEventAttendeeCalendar.Tests\\DocEventAttendeeCalendar.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\udeep\\Desktop\\DocEvent\\DocEventsCalendar\\tests\\DocEventAttendeeCalendar.Tests\\DocEventAttendeeCalendar.Tests.csproj",
       "projectName": "DocEventAttendeeCalendar.Tests",
-      "projectPath": "C:\\Users\\udeep\\Desktop\\tttt\\DocEventsCalendar\\tests\\DocEventAttendeeCalendar.Tests\\DocEventAttendeeCalendar.Tests.csproj",
+      "projectPath": "C:\\Users\\udeep\\Desktop\\DocEvent\\DocEventsCalendar\\tests\\DocEventAttendeeCalendar.Tests\\DocEventAttendeeCalendar.Tests.csproj",
       "packagesPath": "C:\\Users\\udeep\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\udeep\\Desktop\\tttt\\DocEventsCalendar\\tests\\DocEventAttendeeCalendar.Tests\\obj\\",
+      "outputPath": "C:\\Users\\udeep\\Desktop\\DocEvent\\DocEventsCalendar\\tests\\DocEventAttendeeCalendar.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -8558,8 +8558,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\udeep\\Desktop\\tttt\\DocEventsCalendar\\src\\DocEventsAttendeeCalendar.csproj": {
-              "projectPath": "C:\\Users\\udeep\\Desktop\\tttt\\DocEventsCalendar\\src\\DocEventsAttendeeCalendar.csproj"
+            "C:\\Users\\udeep\\Desktop\\DocEvent\\DocEventsCalendar\\src\\DocEventsAttendeeCalendar.csproj": {
+              "projectPath": "C:\\Users\\udeep\\Desktop\\DocEvent\\DocEventsCalendar\\src\\DocEventsAttendeeCalendar.csproj"
             }
           }
         }

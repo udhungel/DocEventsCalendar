@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gpE1wk6mzPk=",
+  "dgSpecHash": "Jhciwn9MpWM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\udeep\\Desktop\\tttt\\DocEventsCalendar\\tests\\DocEventAttendeeCalendar.Tests\\DocEventAttendeeCalendar.Tests.csproj",
+  "projectFilePath": "C:\\Users\\udeep\\Desktop\\DocEvent\\DocEventsCalendar\\tests\\DocEventAttendeeCalendar.Tests\\DocEventAttendeeCalendar.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\udeep\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\udeep\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

@@ -1,26 +1,43 @@
 ﻿using DocEventsAttendanceCalendar.Domain.Interfaces;
+using DocEventsAttendeeCalendar.Domain.Interfaces;
 using DocEventsAttendeeCalendar.DTOs;
 using DocEventsCalendar.Domain.Entities;
-using DocEventsCalendar.Domain.Interfaces;
-using Microsoft.Extensions.Logging;
-
-namespace DocEventsAttendanceCalendar.Domain.Services
+namespace DoctorCalendarAPI.Services
 {
     public class AttendeeService : IAttendeeService
     {
-        private readonly IEventRepository _eventRepository;
-        public AttendeeService(IEventRepository eventRepository)
+        private readonly IAttendeeRepository _attendeeRepository;
+        public AttendeeService(IAttendeeRepository attendeeRepository)
         {
-            _eventRepository = eventRepository;
+            _attendeeRepository = attendeeRepository;
         }
-        public async Task AddAttendeeToEvent(RequestAttendeeDto requestDto)
-        {           
-            await _eventRepository.AddAttendeeToEvent(requestDto.EventId, requestDto.AttendeeId);
+        public async Task<ResponseAttendeeDto> CreateAttendee(RequestAttendeeDto requestAttendeeDto)
+        {
+            var attendee = new Attendee
+            {
+                Name = requestAttendeeDto.Name,
+                Email = requestAttendeeDto.Email
+            };
+            await _attendeeRepository.CreateAttendee(attendee);
+            
+            return new ResponseAttendeeDto
+            {
+                Id = attendee.Id,
+                Name = attendee.Name,
+                Email = attendee.Email
+            };
         }
-        public async Task<bool> RemoveAttendeeFromEvent(int eventId, int attendeeId)
-        {           
-           return await _eventRepository.RemoveAttendeeFromEvent(eventId, attendeeId);
-           
+
+        public async Task<List<ResponseAttendeeDto>> GetAllAttendees()
+        {
+            var attendees = await _attendeeRepository.GetAllAttendees();
+            return attendees.Select(a => new ResponseAttendeeDto
+            {
+                Id = a.Id,
+                Name = a.Name,
+                Email = a.Email
+            }).ToList();
         }
+       
     }
 }

@@ -54,6 +54,7 @@ namespace DocEventsCalendar.Domain.Repositories
 
         public async Task AddAttendeeToEvent(int eventId, int attendeeId)
         {
+            
             var eventAttendee = new EventAttendee
             {
                 EventId = eventId,

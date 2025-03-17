@@ -2,8 +2,7 @@
 {
     public class RequestAttendeeDto
     {
-        public int EventId { get; set; } 
-        public int AttendeeId { get; set; } 
-        public bool IsAttending { get; set; } 
+        public string Name { get; set; }
+        public string Email { get; set; }
     }
 }

@@ -6,7 +6,8 @@ namespace DocEventsAttendanceCalendar.Domain.Interfaces
 {
     public interface IAttendeeService
     {
-        Task AddAttendeeToEvent(RequestAttendeeDto requestDto);
-        Task<bool> RemoveAttendeeFromEvent(int eventId, int attendeeId);
+        Task<ResponseAttendeeDto> CreateAttendee(RequestAttendeeDto attendee);
+       
+        Task<List<ResponseAttendeeDto>> GetAllAttendees();
     }
 }

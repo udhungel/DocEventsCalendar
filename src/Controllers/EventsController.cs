@@ -1,7 +1,5 @@
 ﻿using DocEventsAttendanceCalendar.Domain.Interfaces;
-using DocEventsAttendanceCalendar.Domain.Services;
 using DocEventsAttendeeCalendar.DTOs;
-using DocEventsCalendar.Domain.Entities;
 using DocEventsCalendar.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 

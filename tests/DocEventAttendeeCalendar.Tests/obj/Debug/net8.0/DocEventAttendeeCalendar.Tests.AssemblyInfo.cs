@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DocEventAttendeeCalendar.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e9b66f081e3ea35bdf1205480141397c6ea5ac1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe07cbb6d8cedae5b719ab4844926e093ad8c9d4")]
 [assembly: System.Reflection.AssemblyProductAttribute("DocEventAttendeeCalendar.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DocEventAttendeeCalendar.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

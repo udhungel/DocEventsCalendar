@@ -1,11 +1,7 @@
 ﻿using DocEventsAttendanceCalendar.Domain.Interfaces;
-using DocEventsAttendanceCalendar.Domain.Services;
 using DocEventsAttendeeCalendar.DTOs;
-using DocEventsCalendar.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-
-namespace DocEventsAttendeeCalendar.Controllers
+namespace DoctorCalendarAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -14,31 +10,27 @@ namespace DocEventsAttendeeCalendar.Controllers
         private readonly IAttendeeService _attendeeService;
         public AttendeesController(IAttendeeService attendeeService)
         {
-         _attendeeService = attendeeService; 
+            _attendeeService = attendeeService;
         }
+        
+
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(RequestAttendeeDto))]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> AddAttendeeToEvent(RequestAttendeeDto requestAttendeeDto)
+        public async Task<IActionResult> CreateAttendee(RequestAttendeeDto reqAttendeeDto)
         {
-            await _attendeeService.AddAttendeeToEvent(requestAttendeeDto);
-            return NoContent();
+            if (reqAttendeeDto == null || string.IsNullOrWhiteSpace(reqAttendeeDto.Name) || string.IsNullOrWhiteSpace(reqAttendeeDto.Email))
+            {
+                return BadRequest("Attendee data is not invalid.");
+            }
+            var createdAttendee = await _attendeeService.CreateAttendee(reqAttendeeDto);
+            return CreatedAtAction(nameof(GetAllAttendees), new { id = createdAttendee.Id }, createdAttendee);
         }
 
-        [HttpDelete("{eventId}/attendees/{attendeeId}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)] // Successful removal
-        [ProducesResponseType(StatusCodes.Status404NotFound)] // Not found
-        public async Task<IActionResult> RemoveAttendeeFromEvent(int eventId, int attendeeId)
+       
+        [HttpGet]
+        public async Task<IActionResult> GetAllAttendees()
         {
-            var result = await _attendeeService.RemoveAttendeeFromEvent(eventId, attendeeId);
-            if (result)
-            {
-                return NoContent(); 
-            }
-            else
-            {
-                return NotFound(); 
-            }
+            var attendees = await _attendeeService.GetAllAttendees();
+            return Ok(attendees);
         }
     }
 }
